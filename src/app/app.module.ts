@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { EmployeeInMemDataService } from './services/employee-in-mem-data.service'; // Renamed service
+import { EmployeeInMemDataService } from './services/employee-in-mem-data.service';
+import { ListEmployeesComponent } from './components/list-employees/list-employees.component'; // Renamed service
+import { HttpClientEmployeeService } from './services/http-client-employee.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListEmployeesComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +23,7 @@ import { EmployeeInMemDataService } from './services/employee-in-mem-data.servic
     environment.production ?
       [] : InMemoryWebApiModule.forRoot(EmployeeInMemDataService) // Renamed service
   ],
-  providers: [],
+  providers: [HttpClientEmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
