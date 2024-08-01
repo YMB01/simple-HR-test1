@@ -10,18 +10,24 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { EmployeeInMemDataService } from './services/employee-in-mem-data.service';
 import { ListEmployeesComponent } from './components/list-employees/list-employees.component'; // Renamed service
 import { HttpClientEmployeeService } from './services/http-client-employee.service';
+import { CreateEmployeeComponent } from './components/create-employees/create-employees.component';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListEmployeesComponent
+    ListEmployeesComponent,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     environment.production ?
-      [] : InMemoryWebApiModule.forRoot(EmployeeInMemDataService) // Renamed service
+      [] : InMemoryWebApiModule.forRoot(EmployeeInMemDataService),
+
   ],
   providers: [HttpClientEmployeeService],
   bootstrap: [AppComponent]

@@ -28,7 +28,8 @@ export class HttpClientEmployeeService extends EmployeeService {
     );
   }
 
-  addEmployee(employee: Employee): Observable<Employee> {
+  addEmployee(id: number, firstName: string, lastName: string, email: string, phoneNumber: string, departmentId: number, salaryId: number): Observable<Employee> {
+    const employee = { id, firstName, lastName, email, phoneNumber, departmentId, salaryId };
     return this.http.post<Employee>(this.employeesUrl, employee, cudOptions).pipe(
       catchError(this.handleError)
     );
