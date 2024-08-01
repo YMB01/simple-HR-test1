@@ -30,6 +30,9 @@
                 <td><button type="button" class="btn btn-primary"
                         (click)="toUpdateEmployee(employee.id, employee.firstName, employee.lastName, employee.email, employee.phoneNumber, employee.departmentId, employee.salaryId)">Edit</button>
                 </td>
+                <td><button type="button" class="btn btn-danger"
+                        (click)="deleteEmployee(employee.id, employee.firstName, employee.lastName, employee.email, employee.phoneNumber, employee.departmentId, employee.salaryId)">Delete</button>
+                </td>
             </tr>
         </tbody>
     </table>

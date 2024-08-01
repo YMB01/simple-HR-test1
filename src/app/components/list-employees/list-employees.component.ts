@@ -40,4 +40,11 @@ export class ListEmployeesComponent implements OnInit {
     this.employeeTransferService.setEmployee(employee);
     this.router.navigateByUrl("/updateemployee");
   }
+  deleteEmployee(id: string, firstName: string, lastName: string, email: string, phoneNumber: string, departmentId: number, salaryId: number) {
+    if (confirm("Do you wish to delete " + firstName)) {
+      const employee = { id: +id, firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNumber, departmentId: departmentId, salaryId: salaryId };
+      this.employeeService.deleteEmployee(employee).subscribe();
+      this.getEmployees();
+    }
+  }
 }
