@@ -13,12 +13,14 @@ import { HttpClientEmployeeService } from './services/http-client-employee.servi
 import { CreateEmployeeComponent } from './components/create-employees/create-employees.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListEmployeesComponent,
-    CreateEmployeeComponent
+    CreateEmployeeComponent,
+    UpdateEmployeeComponent
   ],
   imports: [
     BrowserModule,
